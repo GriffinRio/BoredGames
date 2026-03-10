@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://7u5iwhbcdpe5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qjvuq"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_qjvuq"]
+
+[node name="Queen" type="Node3D" unique_id=620326803]
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1378600204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_qjvuq")
+
+[node name="Crown" type="MeshInstance3D" parent="." unique_id=532429097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("PrismMesh_qjvuq")

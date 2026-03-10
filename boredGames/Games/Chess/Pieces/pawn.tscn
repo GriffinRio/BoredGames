@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bc23jd245c52o"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i3imp"]
+
+[node name="Pawn" type="Node3D" unique_id=5661737]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1146482776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("SphereMesh_i3imp")
