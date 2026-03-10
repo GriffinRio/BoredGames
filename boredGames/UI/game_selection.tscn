@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cfkdnsm2vbokb"]
+
+[ext_resource type="Script" uid="uid://nw37r4m3620f" path="res://UI/game_selection.gd" id="1_p6tl3"]
+
+[sub_resource type="Theme" id="Theme_ng8oe"]
+default_font_size = 30
+
+[node name="Game Selection" type="Control" unique_id=125523665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ng8oe")
+script = ExtResource("1_p6tl3")
+
+[node name="Header" type="Label" parent="." unique_id=343717021]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_right = 27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Games"
+
+[node name="Chess" type="Button" parent="." unique_id=1160970575]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -25.0
+offset_right = -365.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chess"
+
+[node name="SkipBo" type="Button" parent="." unique_id=1760760604]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -25.0
+offset_right = 53.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SkipBo
+"
+
+[connection signal="pressed" from="Chess" to="." method="_on_chess_pressed"]

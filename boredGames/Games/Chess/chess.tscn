@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dh6f3kqlm1o7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4l2eq"]
+size = Vector3(16, 1, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4l2eq"]
+size = Vector3(16, 1, 16)
+
+[node name="Chess" type="Node3D" unique_id=793293171]
+
+[node name="White View" type="Camera3D" parent="." unique_id=1862956153]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 6, 11)
+
+[node name="Black View" type="Camera3D" parent="." unique_id=1489391072]
+transform = Transform3D(-1, 6.181723e-08, -6.181723e-08, 0, 0.7071067, 0.7071067, 8.742278e-08, 0.7071067, -0.7071067, 0, 6, -11)
+
+[node name="Board" type="Area3D" parent="." unique_id=1188346693]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board" unique_id=1254724663]
+shape = SubResource("BoxShape3D_4l2eq")
+debug_color = Color(4.428029e-06, 0.6072014, 0.6573974, 0.5529412)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Board" unique_id=1234538906]
+mesh = SubResource("BoxMesh_4l2eq")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1162571396]
+transform = Transform3D(1, 0, 0, 0, -0.009180341, 0.99995786, 0, -0.99995786, -0.009180341, 0, 10.836996, 0)

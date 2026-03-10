@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c5n5kbeiqxx3o"]
+
+[ext_resource type="Script" uid="uid://ddw3awxftf3lf" path="res://UI/main.gd" id="1_vnck2"]
+
+[sub_resource type="Theme" id="Theme_glv2v"]
+default_font_size = 30
+
+[node name="Main" type="Control" unique_id=732111164]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_glv2v")
+script = ExtResource("1_vnck2")
+
+[node name="Title" type="Label" parent="." unique_id=1093997917]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Bored Games!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Online" type="Button" parent="." unique_id=254924090]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -66.0
+offset_right = 48.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Online"
+
+[node name="Offline" type="Button" parent="." unique_id=2124479003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -5.0
+offset_right = 49.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Offline"
+
+[node name="Settings" type="Button" parent="." unique_id=913673000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 68.0
+offset_right = 35.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="Exit" type="Button" parent="." unique_id=962108225]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -205.0
+offset_right = 115.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit to Desktop"
+
+[node name="Author" type="Label" parent="." unique_id=186134123]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -23.0
+offset_right = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "By Griffin Guyer"
+
+[connection signal="pressed" from="Offline" to="." method="_on_offline_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
