@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://bnc0d5drnvhro"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_jw5yp"]
+[ext_resource type="Script" uid="uid://cjgo4gedi3rt2" path="res://Games/Chess/tile.gd" id="1_f3uvg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3uvg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jw5yp"]
 
-[node name="Tile" type="MeshInstance3D" unique_id=1535006795]
-transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 2, 0, 0, 0)
-mesh = SubResource("BoxMesh_jw5yp")
-surface_material_override/0 = SubResource("StandardMaterial3D_f3uvg")
+[sub_resource type="BoxMesh" id="BoxMesh_f3uvg"]
+
+[node name="Tile" type="StaticBody3D" unique_id=103203752]
+script = ExtResource("1_f3uvg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=757924748]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_jw5yp")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1878639218]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 2, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_f3uvg")

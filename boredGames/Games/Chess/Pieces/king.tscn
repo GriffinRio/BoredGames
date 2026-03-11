@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://b6yxn3e0n8oej"]
+[gd_scene format=3 uid="uid://di0cud18w414h"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r68ek"]
+[ext_resource type="Script" uid="uid://b5dt77g6dnmcf" path="res://Games/Chess/Pieces/king.gd" id="1_a3m17"]
 
-[node name="King" type="Node3D" unique_id=577005732]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a3m17"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=331491787]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bno45"]
+
+[node name="King" type="StaticBody3D" unique_id=560141292]
+script = ExtResource("1_a3m17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1056488504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_r68ek")
+shape = SubResource("CapsuleShape3D_a3m17")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=126289378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_bno45")
