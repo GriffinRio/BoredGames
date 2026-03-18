@@ -4,8 +4,11 @@
 [ext_resource type="Shape2D" uid="uid://b3si6boelaf44" path="res://Games/SkipBo/card_shape.tres" id="1_nw1dl"]
 [ext_resource type="Script" uid="uid://b1kb2px7fj4up" path="res://Games/SkipBo/draw_pile.gd" id="2_btj0h"]
 [ext_resource type="BoxMesh" uid="uid://sj2s851q81x8" path="res://Games/SkipBo/card_mesh.tres" id="4_hns3g"]
+[ext_resource type="Script" uid="uid://c43rgkgytpiin" path="res://Games/SkipBo/hand.gd" id="5_7edg1"]
+[ext_resource type="PackedScene" uid="uid://ngq0xjgq51e8" path="res://Games/SkipBo/card.tscn" id="5_56pag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56pag"]
+size = Vector2(14.0666685, 7.033333)
 
 [node name="Skip Bo" type="Node2D" unique_id=83264341]
 script = ExtResource("1_lgq1p")
@@ -21,11 +24,16 @@ shape = ExtResource("1_nw1dl")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Draw Pile" unique_id=1277790707]
 mesh = ExtResource("4_hns3g")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2025154186]
+[node name="Hand" type="Area2D" parent="." unique_id=2025154186]
+position = Vector2(608.00006, 588)
+script = ExtResource("5_7edg1")
+card_scene = ExtResource("5_56pag")
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=388639596]
-position = Vector2(600, 541)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand" unique_id=388639596]
+position = Vector2(-7.2836876e-05, 3.3974648e-06)
 scale = Vector2(30, 15)
 shape = SubResource("RectangleShape2D_56pag")
 
+[connection signal="card_drawn" from="Draw Pile" to="Hand" method="_on_draw_pile_card_drawn"]
 [connection signal="input_event" from="Draw Pile" to="Draw Pile" method="_on_input_event"]
