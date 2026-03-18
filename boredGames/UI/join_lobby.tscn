@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cf2na8kqwkkyv"]
+
+[ext_resource type="Script" uid="uid://d4d8otjb7xlko" path="res://UI/join_lobby.gd" id="1_n67mr"]
+
+[sub_resource type="Theme" id="Theme_nn5r2"]
+default_font_size = 30
+
+[node name="Join Lobby" type="Control" unique_id=1860629987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nn5r2")
+script = ExtResource("1_n67mr")
+
+[node name="Join Button" type="Button" parent="." unique_id=846618988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -25.0
+offset_right = -101.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Join"
+
+[node name="Create Button" type="Button" parent="." unique_id=1497536857]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 99.0
+offset_top = -25.0
+offset_right = 203.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Create"
+
+[node name="Name Input" type="LineEdit" parent="." unique_id=2025005597]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -132.0
+offset_right = 60.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Name"
+
+[node name="Lobby Code Input" type="LineEdit" parent="." unique_id=1252535820]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -266.0
+offset_right = -92.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "Code"
+
+[connection signal="pressed" from="Join Button" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="Create Button" to="." method="_on_create_button_pressed"]

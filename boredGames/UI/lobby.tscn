@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cakhvhq1rl1cn"]
+
+[ext_resource type="Script" uid="uid://bp6w4wmw0cpy0" path="res://UI/lobby.gd" id="1_u8a4o"]
+
+[sub_resource type="Theme" id="Theme_hpfnl"]
+default_font_size = 30
+
+[node name="Lobby" type="Control" unique_id=328074533]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hpfnl")
+script = ExtResource("1_u8a4o")
+
+[node name="Code" type="Label" parent="." unique_id=1780376749]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Code: 10008"
+
+[node name="Change Game" type="Button" parent="." unique_id=951702806]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -188.0
+offset_right = 54.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Change Game"
+
+[node name="Player List" type="Label" parent="." unique_id=2080428384]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Players:"
+
+[node name="Curent Game" type="Label" parent="." unique_id=1853282029]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 62.0
+offset_right = 20.0
+offset_bottom = 104.0
+grow_horizontal = 2
+text = "Game: "
+
+[connection signal="pressed" from="Change Game" to="." method="_on_change_game_pressed"]
