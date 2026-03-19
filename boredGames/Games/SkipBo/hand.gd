@@ -10,13 +10,12 @@ var spacing = 0
 func _ready() -> void:
 	spacing = $CollisionShape2D.get_transform()[0][0] * 2
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
-func _on_draw_pile_card_drawn(card: String) -> void:
+func card_drawn(card: String) -> void:
 	var current_card = card_scene.instantiate()
 	current_card.card = card
 	add_child(current_card)

@@ -35,5 +35,5 @@ position = Vector2(-7.2836876e-05, 3.3974648e-06)
 scale = Vector2(30, 15)
 shape = SubResource("RectangleShape2D_56pag")
 
-[connection signal="card_drawn" from="Draw Pile" to="Hand" method="_on_draw_pile_card_drawn"]
+[connection signal="drew_cards" from="Draw Pile" to="." method="_on_draw_pile_drew_cards"]
 [connection signal="input_event" from="Draw Pile" to="Draw Pile" method="_on_input_event"]
