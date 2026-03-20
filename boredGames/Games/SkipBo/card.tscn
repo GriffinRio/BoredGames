@@ -23,3 +23,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "hi"
 horizontal_alignment = 1
+
+[node name="Outline" type="MeshInstance2D" parent="." unique_id=488485638]
+visible = false
+modulate = Color(0.34509805, 0.8, 0.42745098, 1)
+show_behind_parent = true
+scale = Vector2(1.15, 1.09)
+mesh = ExtResource("3_pqwkw")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

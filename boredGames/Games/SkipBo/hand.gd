@@ -5,6 +5,7 @@ extends Area2D
 var positions = [[]]
 var cards = []
 var spacing = 0
+var selected_card
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,11 +19,17 @@ func _process(delta: float) -> void:
 func card_drawn(card: String) -> void:
 	var current_card = card_scene.instantiate()
 	current_card.card = card
-	add_child(current_card)
 	var x_position = -180 + (cards.size() + 1) * spacing
-	print(x_position)
 	current_card.position.x = x_position
+	add_child(current_card)
+	current_card.card_selected.connect(card_selected)
 	cards.append(current_card)
+	
+func card_selected(card_node):
+	if(selected_card != null):
+		selected_card.unselected()
+	selected_card = card_node
+	selected_card.selected()
 	
 	
 	
