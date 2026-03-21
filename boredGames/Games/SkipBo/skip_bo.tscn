@@ -6,29 +6,10 @@
 [ext_resource type="BoxMesh" uid="uid://sj2s851q81x8" path="res://Games/SkipBo/card_mesh.tres" id="4_hns3g"]
 [ext_resource type="Script" uid="uid://c43rgkgytpiin" path="res://Games/SkipBo/hand.gd" id="5_7edg1"]
 [ext_resource type="PackedScene" uid="uid://ngq0xjgq51e8" path="res://Games/SkipBo/card.tscn" id="5_56pag"]
+[ext_resource type="PackedScene" uid="uid://drvvxlfh3xqhv" path="res://Games/SkipBo/build_pile.tscn" id="7_ynjfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56pag"]
 size = Vector2(14.0666685, 7.033333)
-
-[sub_resource type="Shader" id="Shader_7edg1"]
-code = "shader_type canvas_item;
-
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-}
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynjfp"]
-shader = SubResource("Shader_7edg1")
 
 [node name="Skip Bo" type="Node2D" unique_id=83264341]
 script = ExtResource("1_lgq1p")
@@ -59,45 +40,20 @@ shape = SubResource("RectangleShape2D_56pag")
 position = Vector2(437, 296)
 metadata/_edit_group_ = true
 
-[node name="Build Pile 1" type="Area2D" parent="Build Piles" unique_id=1306085906]
+[node name="Build Pile 1" parent="Build Piles" unique_id=1200223642 instance=ExtResource("7_ynjfp")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Build Piles/Build Pile 1" unique_id=1555027547]
-shape = ExtResource("1_nw1dl")
+[node name="Build Pile 2" parent="Build Piles" unique_id=162857641 instance=ExtResource("7_ynjfp")]
+position = Vector2(87, 0)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Build Piles/Build Pile 1" unique_id=85417181]
-modulate = Color(0, 0.6912582, 0.73728764, 1)
-mesh = ExtResource("4_hns3g")
+[node name="Build Pile 3" parent="Build Piles" unique_id=989659839 instance=ExtResource("7_ynjfp")]
+position = Vector2(167, 0)
 
-[node name="Build Pile 2" type="Area2D" parent="Build Piles" unique_id=726294478]
-position = Vector2(86, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Build Piles/Build Pile 2" unique_id=195269378]
-shape = ExtResource("1_nw1dl")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Build Piles/Build Pile 2" unique_id=2048537671]
-modulate = Color(0, 0.6912582, 0.73728764, 1)
-mesh = ExtResource("4_hns3g")
-
-[node name="Build Pile 3" type="Area2D" parent="Build Piles" unique_id=1003788417]
-position = Vector2(174, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Build Piles/Build Pile 3" unique_id=744010168]
-shape = ExtResource("1_nw1dl")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Build Piles/Build Pile 3" unique_id=930369159]
-modulate = Color(0, 0.6912582, 0.73728764, 1)
-mesh = ExtResource("4_hns3g")
-
-[node name="Build Pile 4" type="Area2D" parent="Build Piles" unique_id=1777287841]
-position = Vector2(258, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Build Piles/Build Pile 4" unique_id=1413454960]
-material = SubResource("ShaderMaterial_ynjfp")
-shape = ExtResource("1_nw1dl")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Build Piles/Build Pile 4" unique_id=2050168281]
-modulate = Color(0, 0.6912582, 0.73728764, 1)
-mesh = ExtResource("4_hns3g")
+[node name="Build Pile 4" parent="Build Piles" unique_id=643867597 instance=ExtResource("7_ynjfp")]
+position = Vector2(247, 0)
 
 [connection signal="drew_cards" from="Draw Pile" to="." method="_on_draw_pile_drew_cards"]
 [connection signal="input_event" from="Draw Pile" to="Draw Pile" method="_on_input_event"]
+[connection signal="play_card" from="Build Piles/Build Pile 1" to="." method="_on_build_pile_play_card"]
+[connection signal="play_card" from="Build Piles/Build Pile 2" to="." method="_on_build_pile_play_card"]
+[connection signal="play_card" from="Build Piles/Build Pile 3" to="." method="_on_build_pile_play_card"]
+[connection signal="play_card" from="Build Piles/Build Pile 4" to="." method="_on_build_pile_play_card"]

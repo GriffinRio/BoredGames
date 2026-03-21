@@ -1,8 +1,7 @@
 extends Area2D
 
-@export var card_scene: PackedScene
 
-var positions = [[]]
+@export var card_scene: PackedScene
 var cards = []
 var spacing = 0
 var selected_card
@@ -28,8 +27,16 @@ func card_drawn(card: String) -> void:
 func card_selected(card_node):
 	if(selected_card != null):
 		selected_card.unselected()
-	selected_card = card_node
-	selected_card.selected()
+	if(selected_card != card_node):	
+		selected_card = card_node
+		selected_card.selected()
+	else:
+		selected_card = null
+
+func remove_selected():
+	cards.erase(selected_card)
+	selected_card.queue_free()
+	selected_card = null
 	
 	
 	

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://drvvxlfh3xqhv"]
+
+[ext_resource type="Script" uid="uid://65ym4865kn7m" path="res://Games/SkipBo/build_pile.gd" id="1_6dien"]
+[ext_resource type="Shape2D" uid="uid://b3si6boelaf44" path="res://Games/SkipBo/card_shape.tres" id="1_bq1vd"]
+[ext_resource type="BoxMesh" uid="uid://sj2s851q81x8" path="res://Games/SkipBo/card_mesh.tres" id="2_6dien"]
+
+[node name="Build Pile" type="Area2D" unique_id=1200223642]
+script = ExtResource("1_6dien")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1206070430]
+shape = ExtResource("1_bq1vd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1506721250]
+modulate = Color(0, 0.6912582, 0.73728764, 1)
+mesh = ExtResource("2_6dien")
+
+[node name="Label" type="Label" parent="." unique_id=1973539623]
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 30.0
+offset_bottom = 21.0
+scale = Vector2(0.47878233, 0.92885065)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "hi"
+horizontal_alignment = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
