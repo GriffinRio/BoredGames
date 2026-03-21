@@ -22,8 +22,20 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			print(card_pile)
 
 func add_card(card):
-	card_pile.append(card)
-	update_displayed_card()
+	if(playable(card)):
+		card_pile.append(card)
+		update_displayed_card()
+	else:
+		print("Can't play card")
 
 func update_displayed_card():
 	$Label.text = card_pile.back()
+
+func playable(card):
+	if card == "skipBo":
+		return true
+	elif (card_pile.size() + 1) == int(card):
+		return true
+	else:
+		return false
+	
