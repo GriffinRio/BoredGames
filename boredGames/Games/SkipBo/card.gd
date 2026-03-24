@@ -14,7 +14,7 @@ func unselected():
 	$Outline.visible = false
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if(event.is_pressed()):
-		if(event.is_action("Click")):
+	if event.is_pressed():
+		if event.is_action("Click"):
 			card_selected.emit(get_node("."))
 			

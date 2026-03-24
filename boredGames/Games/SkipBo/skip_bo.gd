@@ -20,8 +20,11 @@ func _on_draw_pile_drew_cards() -> void:
 
 func _on_build_pile_play_card(pile_node):
 	if $Hand.selected_card != null:
-		if(pile_node.add_card($Hand.selected_card.card)):
+		if pile_node.add_card($Hand.selected_card.card):
 			$Hand.remove_selected()
+			var full = pile_node.check_full()
+			if full:
+				$"Played Pile".ingest(full)
 		else:
 			print("Can't play that card")
 		

@@ -19,9 +19,9 @@ func card_drawn(card: String) -> void:
 	cards.append(current_card)
 	
 func card_selected(card_node):
-	if(selected_card != null):
+	if selected_card != null :
 		selected_card.unselected()
-	if(selected_card != card_node):	
+	if selected_card != card_node:	
 		selected_card = card_node
 		selected_card.selected()
 	else:
