@@ -20,5 +20,9 @@ func _on_draw_pile_drew_cards() -> void:
 
 func _on_build_pile_play_card(pile_node):
 	if $Hand.selected_card != null:
-		pile_node.add_card($Hand.selected_card.card)
+		if(pile_node.add_card($Hand.selected_card.card)):
+			$Hand.remove_selected()
+		else:
+			print("Can't play that card")
+		
 	

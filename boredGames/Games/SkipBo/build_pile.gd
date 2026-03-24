@@ -19,8 +19,9 @@ func add_card(card):
 	if(playable(card)):
 		card_pile.append(card)
 		update_displayed_card()
+		return true
 	else:
-		print("Can't play card")
+		return false
 
 func update_displayed_card():
 	if(card_pile.back() == "skipBo"):
