@@ -15,14 +15,15 @@ modulate = Color(0, 0.6912582, 0.73728764, 1)
 mesh = ExtResource("2_6dien")
 
 [node name="Label" type="Label" parent="." unique_id=1973539623]
-offset_left = -10.0
-offset_top = -21.0
-offset_right = 30.0
-offset_bottom = 21.0
+offset_left = -24.999998
+offset_top = -50.0
+offset_right = 79.43158
+offset_bottom = 57.659935
 scale = Vector2(0.47878233, 0.92885065)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "hi"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

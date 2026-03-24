@@ -8,12 +8,6 @@ var card_pile = []
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_pressed():
 		if event.is_action("Click"):
@@ -29,7 +23,10 @@ func add_card(card):
 		print("Can't play card")
 
 func update_displayed_card():
-	$Label.text = card_pile.back()
+	if(card_pile.back() == "skipBo"):
+		$Label.text = card_pile.back() + "\n(" + str(card_pile.size()) + ")"
+	else:
+		$Label.text = card_pile.back()
 
 func playable(card):
 	if card == "skipBo":
