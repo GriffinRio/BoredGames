@@ -1,6 +1,7 @@
 extends Area2D
 
 signal play_card(pile_node)
+signal full_stack(cards)
 
 var card_pile = []
 
@@ -24,7 +25,7 @@ func add_card(card):
 		return false
 
 func update_displayed_card():
-	if(card_pile.back() == "skipBo"):
+	if card_pile.back() == "skipBo":
 		$Label.text = card_pile.back() + "\n(" + str(card_pile.size()) + ")"
 	else:
 		$Label.text = card_pile.back()
@@ -36,4 +37,16 @@ func playable(card):
 		return true
 	else:
 		return false
-	
+
+func check_full():
+	if card_pile.size() >= 12:
+		var cards = card_pile
+		card_pile = []
+		$Label.text = "hi"
+		return cards
+	else:
+		return false
+		
+		
+		
+		

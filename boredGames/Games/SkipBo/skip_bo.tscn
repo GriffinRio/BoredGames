@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c43rgkgytpiin" path="res://Games/SkipBo/hand.gd" id="5_7edg1"]
 [ext_resource type="PackedScene" uid="uid://ngq0xjgq51e8" path="res://Games/SkipBo/card.tscn" id="5_56pag"]
 [ext_resource type="PackedScene" uid="uid://drvvxlfh3xqhv" path="res://Games/SkipBo/build_pile.tscn" id="7_ynjfp"]
+[ext_resource type="Script" uid="uid://chow5k3se6hf6" path="res://Games/SkipBo/played_pile.gd" id="8_asghh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56pag"]
 size = Vector2(14.0666685, 7.033333)
@@ -51,9 +52,32 @@ position = Vector2(167, 0)
 [node name="Build Pile 4" parent="Build Piles" unique_id=643867597 instance=ExtResource("7_ynjfp")]
 position = Vector2(247, 0)
 
+[node name="Played Pile" type="Area2D" parent="." unique_id=1787837199]
+position = Vector2(235, 298)
+script = ExtResource("8_asghh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Played Pile" unique_id=210533236]
+shape = ExtResource("1_nw1dl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Played Pile" unique_id=1004936230]
+visible = false
+modulate = Color(0, 0, 0, 1)
+mesh = ExtResource("4_hns3g")
+
+[node name="Label" type="Label" parent="Played Pile" unique_id=988140776]
+offset_left = -25.0
+offset_top = -49.999985
+offset_right = 15.322433
+offset_bottom = 49.999985
+scale = Vector2(1.2400049, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="drew_cards" from="Draw Pile" to="." method="_on_draw_pile_drew_cards"]
 [connection signal="input_event" from="Draw Pile" to="Draw Pile" method="_on_input_event"]
 [connection signal="play_card" from="Build Piles/Build Pile 1" to="." method="_on_build_pile_play_card"]
 [connection signal="play_card" from="Build Piles/Build Pile 2" to="." method="_on_build_pile_play_card"]
 [connection signal="play_card" from="Build Piles/Build Pile 3" to="." method="_on_build_pile_play_card"]
 [connection signal="play_card" from="Build Piles/Build Pile 4" to="." method="_on_build_pile_play_card"]
+[connection signal="input_event" from="Played Pile" to="Played Pile" method="_on_input_event"]
