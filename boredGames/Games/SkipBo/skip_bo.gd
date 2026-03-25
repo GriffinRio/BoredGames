@@ -29,3 +29,12 @@ func _on_build_pile_play_card(pile_node):
 			print("Can't play that card")
 		
 	
+
+
+func _on_discard_pile_clicked(pile_node: Variant) -> void:
+	if $Hand.selected_card != null:
+		pile_node.add_discard($Hand.selected_card.card)
+		$Hand.remove_selected()
+	else:
+		$"Discard Piles".select_pile(pile_node)
+		

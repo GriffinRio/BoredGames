@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bbpxaqyv47qmd"]
+
+[ext_resource type="Script" uid="uid://0bofkhdbt8ig" path="res://Games/SkipBo/discard_pile.gd" id="1_2q5yi"]
+[ext_resource type="Shape2D" uid="uid://b3si6boelaf44" path="res://Games/SkipBo/card_shape.tres" id="2_vsx4m"]
+[ext_resource type="BoxMesh" uid="uid://sj2s851q81x8" path="res://Games/SkipBo/card_mesh.tres" id="3_rbio3"]
+
+[node name="Discard Pile" type="Area2D" unique_id=1865866737]
+script = ExtResource("1_2q5yi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693574095]
+shape = ExtResource("2_vsx4m")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=812466181]
+mesh = ExtResource("3_rbio3")
+
+[node name="Label" type="Label" parent="." unique_id=740709616]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -50.0
+offset_right = 25.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "no"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Outline" type="MeshInstance2D" parent="." unique_id=296345539]
+visible = false
+modulate = Color(0.34509805, 0.8, 0.42745098, 1)
+show_behind_parent = true
+scale = Vector2(1.15, 1.09)
+mesh = ExtResource("3_rbio3")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
